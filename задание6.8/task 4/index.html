@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Изменение текста ссылки</title>
+    <style>
+      a {
+        text-decoration: none;
+        color: blue;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function(event) { 
+        document.querySelector("#myLink").addEventListener("click", function(e) {
+          e.preventDefault();
+          var newText = prompt("Введите новый текст для ссылки:");
+          if (newText !== null) {
+            this.textContent = newText;
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="#" id="myLink">Нажмите, чтобы изменить текст ссылки</a>
+  </body>
+</html>
